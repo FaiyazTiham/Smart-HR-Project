@@ -1,0 +1,208 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 50px auto;
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 2px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+}
+
+button.edit {
+    background-color: #007bff;
+    color: white;
+}
+
+button.delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+button.add {
+    background-color: #28a745;
+    color: white;
+    margin-bottom: 15px;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+form textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 100px;
+    resize: vertical;
+}
+/* Dachboard Style*/
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            background-color: #f4f4f4;
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            height: 100vh;
+            width: 220px;
+            background-color: #333;
+            display: flex;
+            flex-direction: column;
+            padding-top: 20px;
+            position: fixed;
+        }
+
+        .sidebar a {
+            padding: 15px 20px;
+            text-decoration: none;
+            color: #f2f2f2;
+            display: block;
+            font-size: 18px;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+            color: white;
+        }
+
+        /* Main content */
+        .main {
+            margin-left: 220px; /* Same as sidebar width */
+            padding: 40px;
+            width: 100%;
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .dashboard-header h1 {
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+
+        .stat-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 30px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-card h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .stat-value {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 20px 0;
+            color: #007BFF;
+        }
+
+        .employee-stat {
+            border-top: 4px solid #28a745;
+        }
+
+        .category-stat {
+            border-top: 4px solid #ffc107;
+        }
+
+        .actions-container {
+            text-align: center;
+        }
+
+        .actions-container button {
+            padding: 20px 40px;
+            font-size: 20px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 8px;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        .actions-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-employee {
+            background-color: #28a745 !important;
+        }
+
+        .btn-employee:hover {
+            background-color: #218838 !important;
+        }
+
+        .btn-category {
+            background-color: #ffc107 !important;
+            color: #212529 !important;
+        }
+
+        .btn-category:hover {
+            background-color: #e0a800 !important;
+        }
+    

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart-HR Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <a href="home.html">Home</a>
+        <a href="index.html">Employee</a>
+        <a href="categories.html">Category</a>
+    </div>
+
+    <!-- Main content -->
+    <div class="main">
+        <div class="dashboard-header">
+            <h1>Smart-HR Dashboard</h1>
+            <p>Manage your employees and categories efficiently</p>
+        </div>
+
+        <div class="stats-container">
+            <div class="stat-card employee-stat">
+                <h2>Total Employees</h2>
+                <div class="stat-value" id="employeeCount">0</div>
+                <p>Currently registered in system</p>
+            </div>
+
+            <div class="stat-card category-stat">
+                <h2>Total Categories</h2>
+                <div class="stat-value" id="categoryCount">0</div>
+                <p>Different department categories</p>
+            </div>
+        </div>
+
+        <div class="actions-container">
+            <button class="btn-employee" onclick="window.location.href='add.html'">Add Employee</button>
+            <button class="btn-category" onclick="window.location.href='add_category.html'">Add Category</button>
+            <button onclick="window.location.href='index.html'">View Employees</button>
+            <button onclick="window.location.href='categories.html'">View Categories</button>
+        </div>
+    </div>
+
+    <script src="js/count.js"></script>
+</body>
+</html>
