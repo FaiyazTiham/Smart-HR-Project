@@ -4,7 +4,65 @@
     <meta charset="UTF-8">
     <title>Smart-HR Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
-    
+    <style>
+        .admin-section {
+            margin-top: 40px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .admin-section h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        
+        .admin-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .admin-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .admin-item:last-child {
+            border-bottom: none;
+        }
+        
+        .admin-info {
+            flex-grow: 1;
+        }
+        
+        .admin-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .admin-email {
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .logout-btn {
+            padding: 10px 20px;
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        
+        .logout-btn:hover {
+            background-color: #c82333;
+        }
+    </style>
 </head>
 <body>
     <!-- Sidebar -->
@@ -41,8 +99,72 @@
             <button onclick="window.location.href='index.html'">View Employees</button>
             <button onclick="window.location.href='categories.html'">View Categories</button>
         </div>
+        
+        <!-- Admin List Section -->
+        <div class="admin-section">
+            <h2>System Administrators</h2>
+            <ul id="adminList" class="admin-list">
+                <!-- Admin list will be populated by JavaScript -->
+            </ul>
+        </div>
+        
+        <button class="logout-btn" onclick="logout()">Logout</button>
     </div>
 
     <script src="js/count.js"></script>
+    <script>
+        // Check if user is logged in
+        document.addEventListener('DOMContentLoaded', () => {
+            const admin = sessionStorage.getItem('admin');
+            if (!admin) {
+                window.location.href = 'login.html';
+                return;
+            }
+            
+            // Fetch and display admin list
+            fetchAdmins();
+        });
+        
+        // Fetch admin list
+        async function fetchAdmins() {
+            try {
+                const response = await fetch('http://localhost:5000/api/auth/admins');
+                const admins = await response.json();
+                
+                const adminList = document.getElementById('adminList');
+                adminList.innerHTML = '';
+                
+                admins.forEach(admin => {
+                    const li = document.createElement('li');
+                    li.className = 'admin-item';
+                    li.innerHTML = `
+                        <div class="admin-info">
+                            <div class="admin-name">${admin.username}</div>
+                            <div class="admin-email">${admin.email}</div>
+                        </div>
+                        <div class="admin-date">${new Date(admin.created_at).toLocaleDateString()}</div>
+                    `;
+                    adminList.appendChild(li);
+                });
+            } catch (error) {
+                console.error('Error fetching admins:', error);
+            }
+        }
+        
+        // Logout function
+        function logout() {
+            sessionStorage.removeItem('admin');
+            window.location.href = 'login.html';
+        }
+    </script>
+    <script>
+    // Check if user is logged in
+    document.addEventListener('DOMContentLoaded', () => {
+        const admin = sessionStorage.getItem('admin');
+        if (!admin) {
+            window.location.href = 'login.html';
+        }
+    });
+</script>
 </body>
 </html>

@@ -15,5 +15,14 @@
         </form>
     </div>
     <script src="js/add_category.js"></script>
+    <script>
+    // Check if user is logged in
+    document.addEventListener('DOMContentLoaded', () => {
+        const admin = sessionStorage.getItem('admin');
+        if (!admin) {
+            window.location.href = 'login.html';
+        }
+    });
+</script>
 </body>
 </html>

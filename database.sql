@@ -14,5 +14,14 @@ CREATE TABLE categories (
     name VARCHAR(255) NOT NULL,
     description TEXT
 );
+CREATE TABLE admins (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+INSERT INTO admins (username, password, email) 
+VALUES ('sani', 'sani123', 'sani@gmail.com');
 USE employee_em;
-SELECT * FROM categories;
+SELECT * FROM admins;
